@@ -1,0 +1,26 @@
+Bike Sharing Demand
+
+In this competition, the task is to forecast bike rental demand in the Capital Bikeshare program in Washington, D.C, using historical usage patterns and weather data.
+
+-------------------------------------------------------------------------
+
+The data files contain hourly rental data spanning two years. I have identified the following factors as the most influential ones that affect the demand
+
+season
+holiday
+weather
+wday
+hour
+atemp
+
+Then a randomForest forest was trained as a classifier and demand count predictions were made for test data.
+
+-------------------------------------------------------------------------
+
+I have used R language for implementing the machine learning. "createDataPartition" function in caret library was used to split the training data further into a training and test datasets. Then "randomForest" was used for creating a model. "predict" function was used to predict the demand for test dataset. "rmsle" function from "Metrics" library was used to find the accuracy of the model. Once I was satisfied with the accuracy, the model is used to predict the demand for the actual test data given by kaggle website.
+
+-------------------------------------------------------------------------
+
+My approach was not very effective, and I got a score of "0.68398" which placed me in 392nd position out of 628 as of 26th Aug.
+
+The reason for this is probably because I did not follow the rule - " You must predict the total count of bikes rented during each hour covered by the test set, using only information available prior to the rental period."
